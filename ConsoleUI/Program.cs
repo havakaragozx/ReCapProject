@@ -28,11 +28,11 @@ namespace ConsoleUI
             //    RentDate = DateTime.Now,
             //    ReturnDate = null
             //};
-            IResult result = rentalManager.Add(rental);
-            if (!result.Success) Console.WriteLine(result.Message);
+            //IResult result = rentalManager.Add(rental);
+            //if (!result.Success) Console.WriteLine(result.Message);
             //rentalManager.Update(rental);
             //rentalManager.Delete(rental);
-            rentalManager.GetAll().Data.ForEach(r => Console.WriteLine(r.CarId + " " + r.RentDate));
+            //rentalManager.GetAll().Data.ForEach(r => Console.WriteLine(r.CarId + " " + r.RentDate));
         }
         private static void customerUser()
         {
