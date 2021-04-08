@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
   public  class ColorManager:IColorService
     {
-        private IColorDal _colorDal;
+        private readonly IColorDal _colorDal;
         public ColorManager(IColorDal colorDal)
         {
             _colorDal = colorDal;

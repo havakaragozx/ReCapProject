@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RentalsController : Controller
     {
-        private IRentalService _rentalService;
+        private readonly IRentalService _rentalService;
 
         public RentalsController(IRentalService rentalService)
         {
@@ -24,10 +24,7 @@ namespace WebAPI.Controllers
         public IActionResult GetById(int id)
         {
             var result = _rentalService.GetById(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
+            if (result.Success) return Ok(result);
 
             return BadRequest(result);
         }
@@ -36,10 +33,7 @@ namespace WebAPI.Controllers
         public IActionResult GetAll()
         {
             var result = _rentalService.GetAll();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
+            if (result.Success) return Ok(result);
 
             return BadRequest(result);
         }
@@ -48,10 +42,7 @@ namespace WebAPI.Controllers
         public IActionResult Add(Rental rental)
         {
             var result = _rentalService.Add(rental);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
+            if (result.Success) return Ok(result);
 
             return BadRequest(result);
         }
@@ -60,10 +51,7 @@ namespace WebAPI.Controllers
         public IActionResult Update(Rental rental)
         {
             var result = _rentalService.Update(rental);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
+            if (result.Success) return Ok(result);
 
             return BadRequest(result);
         }
@@ -72,10 +60,7 @@ namespace WebAPI.Controllers
         public IActionResult Delete(Rental rental)
         {
             var result = _rentalService.Delete(rental);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
+            if (result.Success) return Ok(result);
 
             return BadRequest(result);
         }
